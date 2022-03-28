@@ -386,6 +386,11 @@ h2 {
   margin: 32px 0 0 0;
 }
 
+h3 {
+  font-size: 1.9em;
+  margin: 32px 0 24px 0;
+}
+
 p {
   font-size: 17px;
   line-height: 1.5em;
@@ -478,10 +483,6 @@ pre {
 
 .margin-tb-l {
   margin: 32px 0;
-}
-
-.margin-b-none {
-  margin-bottom: 0px !important;
 }
 
 ul {
@@ -648,7 +649,7 @@ a.button:hover {
   background-color: #f1f1f1;
 }
 
-.screens img {
+.screens .aScreen img {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
@@ -660,6 +661,33 @@ a.button:hover {
   display: block;
   max-height: 300px;
   margin: 0 auto;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.screens .aLogo {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  /* height: 100px; */
+  overflow: hidden;
+  border-radius: 6px;
+  padding: 12px;
+  border-bottom: 3px solid #333;
+  margin: 0 12px 12px 0;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+.screens .aLogo img {
+  height: 83px;
+  width: auto;
+  margin: 0 auto;
+  display: block;
 }
 
 .screen1,
