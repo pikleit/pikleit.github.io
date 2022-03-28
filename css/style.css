@@ -937,7 +937,11 @@ footer a {
 
 @media only screen and (max-device-width: 700px) {
   .main {
-    width: 70%;
+    width: 85%;
+  }
+
+  .page-portion {
+    padding: 5% 0;
   }
 
   .banner {
