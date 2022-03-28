@@ -1,0 +1,112 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pikle.it | Documentation</title>
+    <meta name="description" content="Documentation for Pikle.it">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content=""> -->
+
+    <!-- 
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.png">
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="/favicon.png" />
+</head>
+
+<body>
+    <a name="pageTop"></a>
+    <div id="top"><a href="#pageTop">Top</a></div>
+    <!-- -->
+    <div class="page-portion bg-green">
+        <div class="main">
+            <div class="logo"><a href="http://pikle.it"><img src="/logo-black-transparent.png"
+                        style="max-width:240px;height:auto;" alt="Pikle.it" /></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="black-bar">
+        <div class="main"><a href="/">Documentation</a> / <a href="index.html">General
+                Documentation</a> / Audio Fingerprinting
+        </div>
+    </div>
+
+    <div class="page-portion">
+        <div class="main">
+            <h1>Audio Fingerprinting</h1>
+
+            <p class="attention">This section makes reference to various API calls. <a
+                    href="https://pikleit.github.io/api">Click here</a> for the full technical
+                documentation related to those requests.</p>
+
+            <a name="#q01"></a>
+            <h4>What algorithm does Pikle use to create
+                audio fingerprints?</h4>
+            <div class="border-light">
+                <p>We use the <a href="https://acoustid.org/">AcoustID</a> standard for calculating
+                    the audio fingerprint. Not only is it an open source protocol, but it gives us
+                    access to the pre-existing AcoustID fingerprint database, which helps add
+                    another layer of integration and credibility to incoming songs into the Pikle
+                    environment.</p>
+            </div>
+
+            <a name="#q02"></a>
+            <h4>How do I create an audio fingerprint for a song?</h4>
+            <div class="border-light">
+                <p>The API provides an endpoint which allows for the fingerprinting of a specific
+                    song. Please see the <code
+                        class="withSpan"><span>POST</span>/song/{songId}/footprint</code> endpoint
+                    for more details.</p>
+            </div>
+
+            <a name="#q04"></a>
+            <h4>How do I send audio footprints to the chain?</h4>
+            <div class="border-light">
+                <p>Once you've generated an audio fingerprint (see above), you are good to go. We
+                    run processes in the background that routinely hash and send audio footprints to
+                    the chain.</p>
+            </div>
+
+            <a name="#q03"></a>
+            <h4>What data associated with an audio
+                fingerprint is sent to the chain?</h4>
+            <div class="border-light">
+                <p>Locally, we store a version of the audio footprint in our databases. Using that
+                    fingerprint, we hash it and send the hash of the fingerprint to our BESU private
+                    network. Then routinely, the hashes associated with the data sent to the BEST
+                    private network are combined, hashed, and sent to Ethereum's mainnet.</p>
+            </div>
+
+            <a name="#q05"></a>
+            <h4>How can I see a list of audio fingerprints that have been sent to the chain?</h4>
+            <div class="border-light">
+                <p>Please see our documentation on <a href="chain_sync.html">Chain Syncs</a> for a
+                    more robust understanding of
+                    how to query, work with, and track data sent to the various blockchains we use
+                    to preserve your data.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="main">
+            &copy; 2022 - Pikle.it is a <a href="http://consensys.net">ConsenSys</a> product.
+        </div>
+    </footer>
+</body>
+
+</html>

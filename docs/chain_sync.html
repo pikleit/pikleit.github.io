@@ -1,0 +1,129 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pikle.it | Documentation</title>
+    <meta name="description" content="Documentation for Pikle.it">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content=""> -->
+
+    <!-- 
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.png">
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="/favicon.png" />
+</head>
+
+<body>
+    <a name="pageTop"></a>
+    <div id="top"><a href="#pageTop">Top</a></div>
+    <!-- -->
+    <div class="page-portion bg-green">
+        <div class="main">
+            <div class="logo"><a href="http://pikle.it"><img src="/logo-black-transparent.png"
+                        style="max-width:240px;height:auto;" alt="Pikle.it" /></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="black-bar">
+        <div class="main"><a href="/">Documentation</a> / <a href="index.html">General
+                Documentation</a> / Chain Syncs
+        </div>
+    </div>
+
+    <div class="page-portion">
+        <div class="main">
+            <h1>Chain Syncs</h1>
+
+            <p class="attention">This section makes reference to various API calls. <a
+                    href="https://pikleit.github.io/api">Click here</a> for the full technical
+                documentation related to those requests.</p>
+
+            <a name="#q01"></a>
+            <h4>What is a chain sync?</h4>
+            <div class="border-light">
+                <p>Chain Syncs come in multiple varieties, but in all cases, they involve taking a
+                    data set, whether it be the metadata associated with a song, or that song's
+                    audio fingerprint, and sending them to various blockchain to promote
+                    immutability.</p>
+
+                <p>Generally, chain syncs go from our local network to a private BESU network, and
+                    then from the private BESU network to the Ethereum mainnet network.</p>
+            </div>
+
+            <a name="#q02"></a>
+            <h4>How do I initiate a chain sync for my song's
+                data?</h4>
+            <div class="border-light">
+                <p>The process of getting a song from outside of Pikle's application all the way to
+                    the Ethereum Mainnet is a complex one, but generally speaking, the steps
+                    required are:
+                </p>
+
+                <ol>
+                    <li>Create a user in the platform (creates a wallet) using the <code
+                            class="withSpan"><span>POST</span>/user</code> endpoint.</li>
+                    <li>Add a song into the user's wallet using the <code
+                            class="withSpan"><span>POST</span>/user/{userId}/song</code> endpoint.
+                    </li>
+                    <li>Finally, use the <code
+                            class="withSpan"><span>POST</span>/song/{songId}/metadata</code>
+                        endpoint to create a snapshot of the song's metadata at this point in time.
+                    </li>
+                </ol>
+            </div>
+
+            <a name="#q03"></a>
+            <h4>Where does chain sync data live?</h4>
+            <div class="border-light">
+                <p>If you've followed the steps in the "How do I initiate a chain sync for my song's
+                    data?" question above, this means that you've sent a hashed representation of
+                    your song's data to
+                    our internal BESU
+                    blockchain network (you can think of BESU as our "staging area" before we send
+                    hashed
+                    data onto the Ethereum mainnet.).</p>
+
+                <p>However the data doesn't only live there: routinely, our internal systems will
+                    create "roll up" chain syncs, which send the combined hashes
+                    of recently hashed songs directly to the Ethereum Mainnet.</p>
+            </div>
+
+            <a name="#q04"></a>
+            <h4>How often is chain sync data sent to mainnet?</h4>
+            <div class="border-light">
+                <p>The frequency varies depending on a variety of factors, but we aim to do roll up
+                    chain syncs once daily.</p>
+            </div>
+
+            <a name="#q05"></a>
+            <h4>How do I see a history of what data was synced and
+                when?</h4>
+            <div class="border-light">
+                <p>You can use the <code class="withSpan"><span>GET</span>/sync</code> endpoint to
+                    search and filter through all of our historical data regarding chain syncs.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="main">
+            &copy; 2022 - Pikle.it is a <a href="http://consensys.net">ConsenSys</a> product.
+        </div>
+    </footer>
+</body>
+
+</html>

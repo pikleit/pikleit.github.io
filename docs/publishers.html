@@ -48,6 +48,10 @@
         <div class="main">
             <h1>Providers and Publishers</h1>
 
+            <p class="attention">This section makes reference to various API calls. <a
+                    href="https://pikleit.github.io/api">Click here</a> for the full technical
+                documentation related to those requests.</p>
+
             <a name="q05"></a>
             <h4>What is a Publisher or Provider?</h4>
             <div class="border-light">
@@ -68,41 +72,72 @@
             <a name="q01"></a>
             <h4>What is the process for adding an artist into the Pikle ecosystem?</h4>
             <div class="border-light">
+
+                <p class="attention"><b>Working Email Required!</b><br />It is important to include
+                    a
+                    working
+                    email when creating the
+                    user, otherwise we will not have a means by which to contact the user with
+                    instructions on how to claim
+                    ownership over their wallet (IE, NFTs).
+                    <br /><br />
+                    <b>Wallet Notice</b><br />Every new user not matching an existing
+                    <code>localUserId</code> in our system
+                    will result in a new wallet being generated for the user.
+                </p>
+
                 <ol>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>Use the <code class="withSpan"><span>POST</span>/user</code>
+                        endpoint to
+                        create a user.</li>
+                    <li>When adding the user, make sure the <code>localUserId</code>
+                        (somethings
+                        referred to as the <code>providerUserId</code> as well) input
+                        matches
+                        the internal ID within your system; this can be used in the future
+                        to get an
+                        internal Pikle user ID based on the known user ID in your platform.
+                    </li>
+                    <li>Make a note of the returned Pikle User ID.</li>
                 </ol>
             </div>
 
             <a name="q02"></a>
             <h4>What is the process for adding a song on behalf of an artist?</h4>
             <div class="border-light">
+                <p class="attention"><b>NFT Minting Notice</b><br />This flow does not mint an NFT,
+                    send an
+                    audio-fingerprint to the chain, or create any chain
+                    syncs against song metadata. Additional requests are required for those actions.
+                </p>
                 <ol>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>Look up the user's Pikle User ID based on the user ID of the artist in your
+                        platform. This can be done using the <code
+                            class="withSpan"><span>GET</span>/user/provider/{providerUserId}</code>
+                        endpoint if you didn't save it initially. This endpoint will return an
+                        <code>id</code> field matching the user's Pikle User ID.
+                    </li>
+                    <li>Make a request to the <code
+                            class="withSpan"><span>POST</span>/user/{userId}song</code> endpoint
+                        with the song's details.
+                    </li>
                 </ol>
             </div>
 
             <a name="q03"></a>
             <h4>How can we mass-import a catalog of artists?</h4>
             <div class="border-light">
-                <ol>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
+                <p>While this feature is on our roadmap and will be added soon, as or now the best
+                    way to add artists into Pikle is to use the <code
+                        class="withSpan"><span>POST</span>/user</code> endpoint.</p>
             </div>
 
             <a name="q04"></a>
             <h4>How can we mass-import a catalog of songs?</h4>
             <div class="border-light">
-                <ol>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
+                <p>While this feature is on our roadmap and will be added soon, as or now the best
+                    way to add songs into Pikle is to use the <code
+                        class="withSpan"><span>POST</span>/user/{userId}song</code> endpoint.</p>
             </div>
         </div>
     </div>
