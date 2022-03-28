@@ -469,11 +469,11 @@ hr {
 pre {
   margin: 24px 0;
   font-size: 0.9em;
-  padding: 24px;
-  background-color: #111;
-  border-radius: 8px;
-  border-top: 6px solid #39E991;
-  color: #f1f1f1;
+  padding: 24px 0;
+  /* background-color: #111; */
+  /* border-radius: 8px; */
+  /* border-top: 6px solid #39E991; */
+  /* color: #f1f1f1; */
   overflow-x: auto;
 }
 
