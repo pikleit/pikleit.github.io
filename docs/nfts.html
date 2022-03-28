@@ -1,0 +1,157 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pikle.it | Documentation</title>
+    <meta name="description" content="Documentation for Pikle.it">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content=""> -->
+
+    <!-- 
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.png">
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="/favicon.png" />
+</head>
+
+<body>
+    <a name="pageTop"></a>
+    <div id="top"><a href="#pageTop">Top</a></div>
+    <!-- -->
+    <div class="page-portion bg-green">
+        <div class="main">
+            <div class="logo">
+                <img src="http://pikle.it/img/logo-black-transparent.png"
+                    style="max-width:240px;height:auto;" alt="Pikle.it" />
+            </div>
+        </div>
+    </div>
+
+    <div class="black-bar">
+        <div class="main">
+            <a href="/">Documentation</a> / <a href="index.html">General Documentation</a> / NFTs
+        </div>
+    </div>
+
+    <div class="page-portion">
+        <div class="main">
+            <h1>NFTs</h1>
+
+            <a name="q01"></a>
+            <h4>How do I sell my NFTs on OpenSeas?</h4>
+            <div class="border-light">
+                <p>When we mint your NFT, it is minted against your own personal private key, which
+                    we generate when a provider creates a wallet for you. After transfering your key
+                    to your own ownership (<a href="wallets.html">which we highly recommend you
+                        do</a>), you can log into
+                    OpenSeas using that private key to confirm ownership over the NFT that we
+                    minted.</p>
+
+                <p></p>
+            </div>
+
+            <a name="q06"></a>
+            <h4>Do Pikle-generated NFTs work on other marketplaces?</h4>
+            <div class="border-light">
+                <p>Yes! While we highlight the OpenSeas integration throughout these docs, any
+                    marketplace that supports
+                    ERC-1155s on Polygon and the Ethereum Mainnet will work with a Pikle NFT.</p>
+            </div>
+
+            <a name="q02"></a>
+            <h4>What are the differences minting on Polygon vs Mainnet?</h4>
+            <div class="border-light">
+                <p>Polygon is a layer 2 network which prioritizes speed and volume of transactions
+                    over decentralization. While Polygon is decentralized, it's mechanisms for
+                    settling transactions do not require the same level of "agreement" by individual
+                    nodes in the network as is required in a proof of work network like Ethereum's
+                    Mainnet. The result is far cheaper and quicker minting, as well as cheaper gas
+                    fees in general.</p>
+            </div>
+
+            <a name="q08"></a>
+            <h4>What are the downsides of using Polygon over Mainnet Ethereum?</h4>
+            <div class="border-light">
+                <p>Some will argue that NFTs not on Ethereum's mainnet don't hold their value as
+                    well. Furthermore, Polygon isn't support by all marketplaces currently.</p>
+
+                <p>If you can afford minting on the Ethereum mainnet, we recommend this over
+                    Polygon.</p>
+            </div>
+
+            <a name="q03"></a>
+            <h4>Can I change an NFT's metadata after I've minting it?</h4>
+            <div class="border-light">
+                <p>The short answer is "it depends".</p>
+
+                <p>When you minted your NFT, if you chose to send your artwork and metadata files to
+                    IPFS, then your NFT is considered final and can no longer be updated.</p>
+
+                <p>If you chose to mint the NFT while keeping the artwork and metadata files on
+                    Pikle's local servers, then you can still make changes.</p>
+
+                <p>We recommend minting against Pikle's server until you are 100% satified with the
+                    state of your NFT.</p>
+            </div>
+
+            <a name="q04"></a>
+            <h4>What are the pros/cons of using IPFS over Pikle.it for metadata storage?</h4>
+            <div class="border-light">
+                <p>Much like Ethereum's blockchain is immutible, so it is with
+                    IPFS as well. Therefore if you choose to send your NFT's artwork and metadata
+                    file
+                    to IPFS instead of using Pikle's local servers, the data associated with the NFT
+                    cannot be changed ever again.</p>
+
+                <p>If you choose not to send to IPFS, which we recommend doing until you are 100%
+                    satisfied with the NFT's contents, you can still make changes to the art and
+                    metadata file.</p>
+
+                <p>Essentially, using IPFS when minting creates finality for your song's NFT.</p>
+            </div>
+
+            <a name="q05"></a>
+            <h4>What standard does Pikle mint using?</h4>
+            <div class="border-light">Pikle mints using a standard ERC-1155 contract on both Polygon
+                and Ethereum's Mainnet.</div>
+
+            <a name="q07"></a>
+            <h4>What are the contract addresses for each network?</h4>
+            <div class="border-light">
+                <h5>Polygon</h5>
+                <p>
+                    Mumbai: <a
+                        href="https://mumbai.polygonscan.com/address/0x23E5cFFcC2892c6C34E897Cd1d13461f72A6925A">0x23E5cFFcC2892c6C34E897Cd1d13461f72A6925A</a>
+                    <br />Mainnet: Coming soon
+                </p>
+
+                <h5>Ethereum Mainnet</h5>
+                <p>
+                    Rinkeby: <a
+                        href="https://rinkeby.etherscan.io/address/0x7A0da2BCEDD832c41871198B4ba9F49692f00a37">0x7A0da2BCEDD832c41871198B4ba9F49692f00a37</a><br />
+                    Mainnet: Coming soon
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="main">
+            &copy; 2022 - Pikle.it is a <a href="http://consensys.net">ConsenSys</a> product.
+        </div>
+    </footer>
+</body>
+
+</html>
