@@ -472,7 +472,7 @@ hr {
   z-index: 2;
 }
 
-pre {
+.main pre {
   margin: 24px 0;
   font-size: 0.9em;
   padding: 24px 0;
@@ -483,7 +483,7 @@ pre {
   overflow-x: auto;
 }
 
-code:not(.highlight-code) {
+.main code {
   background-color: #111;
   border-radius: 6px;
   font-size: 0.85em;
@@ -493,11 +493,11 @@ code:not(.highlight-code) {
   /* border: 2px solid #111; */
 }
 
-code:not(.highlight-code).withSpan {
+.main code.withSpan {
   padding-left: 0px !important;
 }
 
-code:not(.highlight-code) span {
+.main code span {
   background-color: #39E991;
   padding: 2px 6px;
   border-radius: 3px;
