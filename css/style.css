@@ -493,11 +493,11 @@ code:not(pre) {
   /* border: 2px solid #111; */
 }
 
-code.withSpan {
+code:not(pre).withSpan {
   padding-left: 0px !important;
 }
 
-code span {
+code:not(pre) span {
   background-color: #39E991;
   padding: 2px 6px;
   border-radius: 3px;
