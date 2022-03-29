@@ -65,6 +65,72 @@
                         href="http://pikle.it/#page5">contact us</a> to inquire about getting
                     set up with an API key.</p>
             </div>
+
+            <a name="#q02"></a>
+            <h4>How does pagination work with the API?</h4>
+            <div class="border-light">
+                <p>When looking through the API technical docs, you'll notice that some endpoints
+                    are classified under the "Search" header. Any endpoint under this classification
+                    has access to pagination input.</p>
+
+                <p>Pagination inputs should be included in the query string, and follow these
+                    guidelines:</p>
+
+                <ul>
+                    <li><code class="withSpan"><span>int</span>limit</code>: How many results per
+                        page. Maximum is 100.</li>
+                    <li><code class="withSpan"><span>int</span>offset</code>: How many records to
+                        skip before returning results.</li>
+                    <li><code class="withSpan"><span>string</span>sortKey</code>: What key within
+                        the model to sort against. These are different for each search endpoint.
+                        Please see the API technical docs for more specifics.</li>
+                    <li><code class="withSpan"><span>string</span>sortDir</code>: This can be either
+                        <code>ASC</code> or <code>DESC</code>.
+                    </li>
+                </ul>
+
+                <h5>Example:</h5>
+                <code
+                    class="withSpan"><span>GET</span>/song?limit=10&offset=0&sortKey=created_at&sortDir=DESC</code>
+            </div>
+
+            <a name="#q03"></a>
+            <h4>How do I filter search results?</h4>
+            <div class="border-light">
+                <p>When looking through the API technical docs, you'll notice that some endpoints
+                    are classified under the "Search" header. Most endpoints within this
+                    classification have access to search filters.</p>
+
+                <p>Search filters depend on the search endpoint in question; you can reference the
+                    API technical docs to see available keys per endpoint.</p>
+
+                <p>In all cases, search filters should be sent via the query string, and in all
+                    cases, can include an optional comparison indicator before the search value.</p>
+
+                <ul>
+                    <li><code>==</code>: Exactly equals. Case sensitive.</li>
+                    <li><code>~~</code>: Fuzzy, case insensitive comparison.</li>
+                    <li><code>~=</code>: Does not equal. Case sensitive.</li>
+                    <li><code>>></code>: Greater than.</li>
+                    <li><code><<</code>: Less than.</li>
+                    <li><code>>=</code>: Greater than or equal to.</li>
+                    <li><code><=</code>: Less than or equal to.</li>
+                </ul>
+
+                <h5>Example (HTML special characters have not been encoded, but you should do this
+                    when
+                    sending your request):</h5>
+                <code
+                    class="withSpan"><span>GET</span>/song?user_id=UUID&created_at=>=2022-05-13&name=~~dreams</code>
+
+                <p>The above will return songs that meet the following criteria:</p>
+
+                <ul>
+                    <li>Song must be ownerd by user with user ID "UUID"</li>
+                    <li>Song must have been created on or after "2022-05-13"</li>
+                    <li>Song name should include the case-insensitive word "dreams".</li>
+                </ul>
+            </div>
         </div>
     </div>
 
