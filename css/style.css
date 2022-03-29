@@ -483,7 +483,7 @@ pre {
   overflow-x: auto;
 }
 
-code {
+code:not(pre) {
   background-color: #111;
   border-radius: 6px;
   font-size: 0.85em;
