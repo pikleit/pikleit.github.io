@@ -483,7 +483,7 @@ pre {
   overflow-x: auto;
 }
 
-code:not(pre) {
+code:not(.highlight-code) {
   background-color: #111;
   border-radius: 6px;
   font-size: 0.85em;
@@ -493,11 +493,11 @@ code:not(pre) {
   /* border: 2px solid #111; */
 }
 
-code:not(pre).withSpan {
+code:not(.highlight-code).withSpan {
   padding-left: 0px !important;
 }
 
-code:not(pre) span {
+code:not(.highlight-code) span {
   background-color: #39E991;
   padding: 2px 6px;
   border-radius: 3px;
