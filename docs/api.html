@@ -53,6 +53,23 @@
                 are looking for the
                 technical (Swagger) API documentation.</p>
 
+            <a name="#q00"></a>
+            <h4>What is the structure of API request bodies returned from the Pikle API?</h4>
+            <div class="border-light">
+                <p>While the content of the <code>body</code> will vary for each request, the
+                    standard envelop we send responses in contains three components:</p>
+                <ul>
+                    <li><code class="withSpan"><span>any</span>body</code>: The primary response
+                        sent for this API request. When an error occurs, this will include details
+                        about the error.</li>
+                    <li><code class="withSpan"><span>boolean</span>success</code>: Whether the
+                        result was successful or not.</li>
+                    <li><code class="withSpan"><span>string</span>code</code>: The internal Pikle
+                        code for the success or error message assocaited with the body.
+                    </li>
+                </ul>
+            </div>
+
             <a name="#q01"></a>
             <h4>How do I gain access to the API?</h4>
             <div class="border-light">
