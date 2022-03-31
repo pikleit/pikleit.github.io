@@ -483,6 +483,16 @@ hr {
   overflow-x: auto;
 }
 
+.main pre {
+  background-color: #111;
+  border-radius: 6px;
+  font-size: 0.85em;
+  font-family: 'Courier New', Courier, monospace;
+  color: #f1f1f1;
+  padding: 12px 18px;
+  border-left: 6px solid #39E991;
+}
+
 .main code {
   background-color: #111;
   border-radius: 6px;
