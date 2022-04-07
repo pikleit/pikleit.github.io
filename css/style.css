@@ -941,6 +941,11 @@ footer {
   color: #777;
 }
 
+footer.clear {
+  background-color: #fff;
+  margin-top: 48px;
+}
+
 footer a {
   color: #777;
 }
