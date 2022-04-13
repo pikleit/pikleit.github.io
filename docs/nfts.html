@@ -151,6 +151,23 @@
                     continue to experience slow response times after 24 hours, please contact us for
                     additional support.</p>
             </div>
+
+            <a name="q09"></a>
+            <h4>How do I batch mint NFTs?</h4>
+            <div class="border-light">
+                <p>The process of batch minting NFTs involves first creating the songs within the
+                    Pikle platform, either via TSV import or individually. Once you have created
+                    your songs and have the song IDs, you can make a request to the <code
+                        class="withSpan"><span>POST</span>/user/{userId}/nft/batch</code> endpoint
+                    to initiate the minting process.</p>
+
+                <p>Note that, as is evidenced by the batch minting endpoint, you can only mint in
+                    batches to a single wallet (ie user ID) for any given batch request.</p>
+
+                <p>Please see the input model from the <a
+                        href="https://pikleit.github.io/api/index.html#/Batches/post_user__userId__nft_batch">API
+                        documentation</a> for information on how to create the API request.</p>
+            </div>
         </div>
     </div>
     <footer class="clear">
